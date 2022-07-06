@@ -40,12 +40,13 @@ resource fluxConfigInfra 'Microsoft.KubernetesConfiguration/fluxConfigurations@2
       repositoryRef: {
         branch: 'main'
       }
-      syncIntervalInSeconds: 120
+      syncIntervalInSeconds: 30
     }
     kustomizations: {
       'infra': {
         path: './manifests'
-        syncIntervalInSeconds: 120
+        syncIntervalInSeconds: 30
+        prune: 'true'
       }
     }
   }
@@ -66,12 +67,13 @@ resource fluxConfigApp1 'Microsoft.KubernetesConfiguration/fluxConfigurations@20
       repositoryRef: {
         branch: 'main'
       }
-      syncIntervalInSeconds: 120
+      syncIntervalInSeconds: 30
     }
     kustomizations: {
       'app1': {
         path: './manifests'
-        syncIntervalInSeconds: 120
+        syncIntervalInSeconds: 30
+        prune: 'true'
       }
     }
   }
