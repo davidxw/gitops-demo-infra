@@ -41,11 +41,13 @@ resource fluxConfigInfra 'Microsoft.KubernetesConfiguration/fluxConfigurations@2
         branch: 'main'
       }
       syncIntervalInSeconds: 30
+      timeoutInSeconds: 60
     }
     kustomizations: {
       'infra': {
         path: './manifests'
         syncIntervalInSeconds: 30
+        timeoutInSeconds: 60
         prune: 'true'
       }
     }
@@ -68,11 +70,13 @@ resource fluxConfigApp1 'Microsoft.KubernetesConfiguration/fluxConfigurations@20
         branch: 'main'
       }
       syncIntervalInSeconds: 30
+      timeoutInSeconds: 60
     }
     kustomizations: {
       'app1': {
         path: './manifests'
         syncIntervalInSeconds: 30
+        timeoutInSeconds: 60
         prune: 'true'
       }
     }
