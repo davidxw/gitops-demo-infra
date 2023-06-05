@@ -27,7 +27,6 @@ spec:
         kind: HelmRepository
         name: ingress-nginx
         namespace: cluster-config
-      version: "3.23.0"
   interval: 1h0m0s
   install:
     remediation:
